@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block body %}
+<body class="image">
+    <form action="/predict" method="post">
+        <div class="input-form">
+            <p class="calculator-title">Stress Meter</p>
+
+            <div class="input-one">
+                <h4>How many hours did you sleep today?</h4>
+                <input type="text" class="sleep-input-from" name="sleepHours" placeholder="Enter hours of sleep (1-24)">
+            </div>
+
+            <div class="input-two">
+                <h4>How many hours did you exercise today?</h4>
+                <input type="text" class="exercise-input-from" name="exerciseHours" placeholder="Enter hours of exercise (1-24)">
+            </div>
+
+            <div class="input-three">
+                <h4>How many hours did you study today?</h4>
+                <input type="text" class="study-input-from" name="studyHours" placeholder="Enter hours of study (1-24)">
+            </div>
+
+            <div class="input-four">
+                <h4>How many hours did you work today?</h4>
+                <input type="text" class="work-input-from" name="workHours" placeholder="Enter hours of work (1-24)">
+            </div>
+
+            <div class="submit-button-container">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <footer class="footer">
+        <p>Made with care 🌱 Take things one day at a time.</p>
+    </footer>
+</body>
+{% endblock %}

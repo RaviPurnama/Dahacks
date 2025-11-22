@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block body %}
+<div class="dashboard-image">
+    <div class="dashboard-container">
+        <h1>Your Past Stress Entries</h1>
+
+        {% if entries|length == 0 %}
+            <p>You don't have any entries yet. Try submitting a stress calculation.</p>
+        {% else %}
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sleep (hrs)</th>
+                    <th>Exercise (hrs)</th>
+                    <th>Study (hrs)</th>
+                    <th>Work (hrs)</th>
+                    <th>Stress Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in entries %}
+                <tr>
+                    <td>{{ row["date_only"] }}</td>
+                    
+                    <!-- Force 1 decimal place -->
+                    <td>{{ "%.1f"|format(row["sleep_hours"]) }}</td>
+                    <td>{{ "%.1f"|format(row["exercise_hours"]) }}</td>
+                    <td>{{ "%.1f"|format(row["study_hours"]) }}</td>
+                    <td>{{ "%.1f"|format(row["work_hours"]) }}</td>
+                    <td><strong>{{ "%.1f"|format(row["stress_level"]) }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

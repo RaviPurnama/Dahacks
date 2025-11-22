@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block body %}
+<div class="results-image">  
+    <!-- RESULTS PAGE CONTAINER -->
+    <div class="results-container {{ colorClass }}">
+        <h1 class="results-title">🌿 Your Stress Level Results</h1>
+
+        <div class="results-box">
+            <p class="results-number">{{ stress }}</p>
+            <p class="results-message">{{ message }}</p>
+
+            <form action="/analytics" method="post">
+                <input type="hidden" name="workHours" value="{{ work_hours }}">
+                <input type="hidden" name="studyHours" value="{{ study_hours }}">
+                <input type="hidden" name="sleepHours" value="{{ sleep_duration }}">
+                <input type="hidden" name="exerciseHours" value="{{ exercise }}">
+
+                <a href="/" class="back-button">← Go Back</a>
+                <button type="submit" class="analytics-button">View Insights</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

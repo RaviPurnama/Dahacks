@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+<div class="register-image">
+  <div class="form-container">
+    <h2>Login</h2>
+    <form action="/login" method="post">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" required>
+
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" required>
+
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

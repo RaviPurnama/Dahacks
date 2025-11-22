@@ -1,0 +1,87 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(162, 211, 179);           /* pastel green */
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow: hidden; /* Prevent the navbar from expanding */
+}
+
+/* Logo styling */
+.navbar-logo img {
+    height: 60px; /* Increase the logo height */
+    width: auto; /* Maintain the aspect ratio */
+    display: block;
+    object-fit: contain; /* Ensure the logo fits within the height */
+}
+
+/* Navigation links */
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #388e6c;
+    background: #eafaf1;
+    padding: 0.6rem 1.2rem;
+    border-radius: 24px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+}
+
+/* Hover and focus states */
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+    background: #c2e9d7;
+    color: #22694f;
+    transform: translateY(-1px);
+}
+
+
+/* Form title */
+form h1 {
+    font-size: 1.8rem;
+    color: #22694f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+/* Form input fields */
+input[type="number"] {
+    width: 80%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: #388e6c;
+}
+
+/* Button styling */
+button {
+    background-color: #388e6c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #22694f;
+}

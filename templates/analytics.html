@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block body %}
+    <body class="analytics-image">
+
+        <div class="analytics-container">
+            <h1 class="analytics-header">🌱 Your Wellness Insights</h1>
+
+            <div class="analytics-section-box">
+                <h2>Your Sleeping Habits</h2>
+                <div class="progress sleep-bar" role="progressbar" aria-label="Sleep Progress" aria-valuemin="0" aria-valuemax="100">
+                    <div 
+                        class="progress-bar {{ 'bg-success' if sleep_percentage >= 75 else 'bg-warning' if sleep_percentage >= 50 else 'bg-danger' }}" 
+                        style="width: {{ sleep_percentage }}%;" 
+                        aria-valuenow="{{ sleep_percentage }}">
+                    </div>
+                </div>
+                <p>{{ sleep_msg }}</p>
+            </div>
+
+            <div class="analytics-section-box">
+                <h2>Your Exercise Habits</h2>
+                <div class="progress exercise-bar" role="progressbar" aria-label="Exercise Progress" aria-valuemin="0" aria-valuemax="100">
+                    <div 
+                        class="progress-bar {{ 'bg-success' if exercise_percentage >= 75 else 'bg-warning' if exercise_percentage >= 50 else 'bg-danger' }}" 
+                        style="width: {{ exercise_percentage }}%;" 
+                        aria-valuenow="{{ exercise_percentage }}">
+                    </div>
+                </div>
+                <p>{{ exercise_msg }}</p>
+            </div>
+
+            <div class="analytics-section-box">
+                <h2>Your Study Habits</h2>
+                <div class="progress study-bar" role="progressbar" aria-label="Study Progress" aria-valuemin="0" aria-valuemax="100">
+                    <div 
+                        class="progress-bar {{ 'bg-success' if study_percentage >= 75 else 'bg-warning' if study_percentage >= 50 else 'bg-danger' }}" 
+                        style="width: {{ study_percentage }}%;" 
+                        aria-valuenow="{{ study_percentage }}">
+                    </div>
+                </div>
+                <p>{{ study_msg }}</p>
+            </div>
+
+            <div class="analytics-section-box">
+                <h2>Your Work Habits</h2>
+                <div class="progress work-bar" role="progressbar" aria-label="Work Progress" aria-valuemin="0" aria-valuemax="100">
+                    <div 
+                        class="progress-bar {{ 'bg-success' if work_percentage >= 75 else 'bg-warning' if work_percentage >= 50 else 'bg-danger' }}" 
+                        style="width: {{ work_percentage }}%;" 
+                        aria-valuenow="{{ work_percentage }}">
+                    </div>
+                </div>
+                <p>{{ work_msg }}</p>
+            </div>
+
+            <a href="/" class="back-button">← Back to Home</a>
+        </div>
+
+    </body>
+</html>
+{% endblock %}
